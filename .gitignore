@@ -1,0 +1,7 @@
+node_modules/
+.next/
+.env*
+!.env.example
+contracts/target/
+*.wasm
+.DS_Store

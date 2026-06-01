@@ -1,5 +1,7 @@
 # MeritMint
 
+**Deployed Contract:** [CA3KD3AKH6PV42PKI23TPAEPY5ORFAHBYT44W4QD5YFKC4SYQ3O7IUFY](https://stellar.expert/explorer/testnet/contract/CA3KD3AKH6PV42PKI23TPAEPY5ORFAHBYT44W4QD5YFKC4SYQ3O7IUFY)
+
 MeritMint is a full-stack Stellar Testnet dApp for issuing non-transferable academic credential NFTs. An institution wallet initializes the Soroban contract as the admin, then mints on-chain certificate records directly to student wallet addresses. Each credential stores the student name, course, and issue date on-chain, and students can open or share a proof-of-credential link that resolves the credential from Soroban storage in the frontend.
 
 ## Tech Stack
@@ -29,8 +31,10 @@ meritmint/
 ├── contracts/
 │   ├── Cargo.toml                  # Soroban contract package manifest
 │   └── src/
-│       └── lib.rs                  # MeritMint credential contract with tests
-├── frontend/
+│       └── lib.rs                  # MeritMint
+
+**Deployed Contract:** [CA3KD3AKH6PV42PKI23TPAEPY5ORFAHBYT44W4QD5YFKC4SYQ3O7IUFY](https://stellar.expert/explorer/testnet/contract/CA3KD3AKH6PV42PKI23TPAEPY5ORFAHBYT44W4QD5YFKC4SYQ3O7IUFY) credential contract with tests
+├── 
 │   ├── app/
 │   │   ├── globals.css             # Global Tailwind and visual theme styles
 │   │   ├── layout.tsx              # Root layout, metadata, and font setup
@@ -91,7 +95,7 @@ The CLI returns a Contract ID after deployment succeeds. Copy that value exactly
 ## Step 4 — Install Frontend Dependencies
 
 ```bash
-cd ../frontend
+frontend
 npm install
 ```
 
@@ -103,10 +107,10 @@ This installs Next.js, Tailwind, the Stellar JavaScript SDK, and the Freighter b
 cp .env.example .env.local
 ```
 
-Open `frontend/.env.local` and paste the Contract ID from Step 3 into `NEXT_PUBLIC_CONTRACT_ID`. The other values are already pinned to Stellar Testnet:
+Open `.env.local` and paste the Contract ID from Step 3 into `NEXT_PUBLIC_CONTRACT_ID`. The other values are already pinned to Stellar Testnet:
 
 ```env
-NEXT_PUBLIC_CONTRACT_ID=YOUR_DEPLOYED_CONTRACT_ID
+NEXT_PUBLIC_CONTRACT_ID=CA3KD3AKH6PV42PKI23TPAEPY5ORFAHBYT44W4QD5YFKC4SYQ3O7IUFY
 NEXT_PUBLIC_NETWORK_PASSPHRASE=Test SDF Network ; September 2015
 NEXT_PUBLIC_RPC_URL=https://soroban-testnet.stellar.org
 NEXT_PUBLIC_HORIZON_URL=https://horizon-testnet.stellar.org
@@ -171,7 +175,7 @@ Open http://localhost:3000
 ## Common Errors & Fixes
 
 - `Transaction simulation failed`
-  The contract is not deployed, the contract ID is wrong, or the contract is not initialized. Verify `NEXT_PUBLIC_CONTRACT_ID` in `frontend/.env.local`.
+  The contract is not deployed, the contract ID is wrong, or the contract is not initialized. Verify `NEXT_PUBLIC_CONTRACT_ID` in `.env.local`.
 
 - `Freighter not found`
   Install the Freighter browser extension and refresh the page.
